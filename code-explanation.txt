@@ -1,0 +1,28 @@
+cv2 (OpenCV):
+OpenCV is a popular open-source computer vision library.
+It provides a wide range of tools and algorithms for image and video processing.
+Used for tasks like capturing video from webcams, reading and writing image files, color space conversions, object detection, and more.
+numpy:
+NumPy is a fundamental package for scientific computing in Python.
+It provides support for large, multi-dimensional arrays and matrices, along with a collection of mathematical functions to operate on these arrays.
+Used here for numerical operations and array manipulation, such as flipping arrays along axes.
+time:
+The time module provides various time-related functions.
+Used here to introduce a delay to allow the camera to warm up before capturing the background.
+
+
+
+Import Libraries: It imports necessary libraries including cv2 (OpenCV), numpy (for numerical operations), and time.
+Check OpenCV Version: Prints the version of OpenCV installed in the system.
+Capture Video: Initializes video capture from the default camera (Webcam) and gives the camera some time to warm up.
+Capture Background: Captures the background frame (without the object) by reading several frames and averaging them.
+Define Color Range: Defines the HSV (Hue, Saturation, Value) range for the dark red color, which will be used to detect the cloak.
+Main Loop: Continuously captures frames from the video feed and processes them.
+Converts the frame from BGR (Blue-Green-Red) color space to HSV.
+Creates a mask to isolate the dark red color (cloak) from the frame.
+Refines the mask using morphological operations.
+Generates the final output by combining the background and foreground (excluding the dark red color).
+Displays the final output in a window named "INVISIBLE MAN".
+Waits for the 'Esc' key to be pressed to exit the loop.
+Release Resources: After the loop ends, it releases the video capture and closes all OpenCV windows.
+
